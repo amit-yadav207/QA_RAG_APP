@@ -275,14 +275,6 @@ def main():
             <hr style="border:1px solid #002147;">
         """, unsafe_allow_html=True)
 
-        
-        st.markdown("<h3 style='color:#074791;'>📜 Chat History</h3>", unsafe_allow_html=True)
-        chat_container = st.container()
-        with chat_container:
-            for role, message in reversed(st.session_state.chat_history):
-                st.markdown(f"<div style='padding:10px; border-radius:8px; background:#f1f1f1;color:black; margin-bottom:5px;'><strong>{role}</strong>: {format_links(message)}</div>", unsafe_allow_html=True)
-
-        
         user_question = st.text_input("🤔 Ask something about NITJ (admissions, academics, research, facilities)...")
 
         if user_question:
@@ -291,7 +283,12 @@ def main():
             response = user_input2(user_question)
             # st.markdown(format_links(response), unsafe_allow_html=True)
 
-        
+        st.markdown("<h3 style='color:#074791;'>📜 Chat History</h3>", unsafe_allow_html=True)
+        chat_container = st.container()
+        with chat_container:
+            for role, message in reversed(st.session_state.chat_history):
+                st.markdown(f"<div style='padding:10px; border-radius:8px; background:#f1f1f1;color:black; margin-bottom:5px;'><strong>{role}</strong>: {format_links(message)}</div>", unsafe_allow_html=True)
+
         
         with st.sidebar:
             st.markdown("<h2 style='color:#edf0f2;'>📂 Document Processing</h2>", unsafe_allow_html=True)
