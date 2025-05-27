@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.myenv/
+myenv
+.DS_Store
+pdfs
+pdf_storage
+# VSCode
+.vscode/
+
+# Streamlit secrets
+secrets.toml
+
+# System
+*.log
+*.sqlite3
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+myenv/
